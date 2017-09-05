@@ -25,9 +25,11 @@ namespace FormAppHW0
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
+
+            
         }
 
-        private void lnAmount_TextChanged(object sender, EventArgs e)
+        private void LnAmount_TextChanged(object sender, EventArgs e)
         {
             int val;
             if ((!Int32.TryParse(lnAmount.Text, out val)))
@@ -38,11 +40,11 @@ namespace FormAppHW0
             {
                 label4.Visible = false;
             }
-
+            return ;
            
         }
 
-        private void trmYears_TextChanged(object sender, EventArgs e)
+        private void TrmYears_TextChanged(object sender, EventArgs e)
         {
             int val;
             if ((!Int32.TryParse(trmYears.Text, out val)))
@@ -60,7 +62,7 @@ namespace FormAppHW0
             }
         }
 
-        private void iRate_TextChanged(object sender, EventArgs e)
+        private void IRate_TextChanged(object sender, EventArgs e)
         {
             double val;
             if ((!double.TryParse(iRate.Text, out val)))
@@ -79,5 +81,12 @@ namespace FormAppHW0
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(label4.Visible == false && label5.Visible == false && label6.Visible == false)
+            {
+                Solution.Text = (Convert.ToDouble(lnAmount.Text) + Convert.ToDouble(trmYears.Text)).ToString();
+            }
+        }
     }
 }
