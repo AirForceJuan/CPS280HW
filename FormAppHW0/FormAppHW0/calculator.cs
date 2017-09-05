@@ -8,6 +8,6 @@ namespace FormAppHW0
 {
     class Calculator
     {
-
+        
     }
 }

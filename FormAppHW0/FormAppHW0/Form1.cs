@@ -25,59 +25,72 @@ namespace FormAppHW0
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
+
+            
         }
 
-        private void lnAmount_TextChanged(object sender, EventArgs e)
+        private void LnAmount_TextChanged(object sender, EventArgs e)
         {
-            int val;
-            if ((!Int32.TryParse(lnAmount.Text, out val)))
+            int loanVal;
+            if ((!Int32.TryParse(lnAmount.Text, out loanVal)))
             {
                 label4.Visible = true;
             }
-            if ((Int32.TryParse(lnAmount.Text, out val)))
+            if ((Int32.TryParse(lnAmount.Text, out loanVal)))
             {
                 label4.Visible = false;
             }
-
            
         }
 
-        private void trmYears_TextChanged(object sender, EventArgs e)
+        private void TrmYears_TextChanged(object sender, EventArgs e)
         {
-            int val;
-            if ((!Int32.TryParse(trmYears.Text, out val)))
+            int termVal;
+            if ((!Int32.TryParse(trmYears.Text, out termVal)))
             {
                 label5.Visible = true;
             }
-            if ((Int32.TryParse(trmYears.Text, out val)))
+            if ((Int32.TryParse(trmYears.Text, out termVal)))
             {
                 label5.Visible = false;
             }
-            string num = val.ToString();
+            string num = termVal.ToString();
             if (num.Length >= 4)
             {
                 label5.Visible = true;
             }
         }
 
-        private void iRate_TextChanged(object sender, EventArgs e)
+        private void IRate_TextChanged(object sender, EventArgs e)
         {
-            double val;
-            if ((!double.TryParse(iRate.Text, out val)))
+            double rateVal;
+            if ((!double.TryParse(iRate.Text, out rateVal)))
             {
                 label6.Visible = true;
             }
-            if ((double.TryParse(iRate.Text, out val)))
+            if ((double.TryParse(iRate.Text, out rateVal)))
             {
                 label6.Visible = false;
             }
 
-            string num = val.ToString();
+            string num = rateVal.ToString();
             if (num.Length >= 5)
             {
                 label6.Visible = true;
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (label4.Visible == false && label5.Visible == false && label6.Visible == false)
+            {
+                
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
