@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lnAmount = new System.Windows.Forms.TextBox();
-            this.trmYears = new System.Windows.Forms.TextBox();
-            this.iRate = new System.Windows.Forms.TextBox();
+            this.loanAmount = new System.Windows.Forms.TextBox();
+            this.loanYears = new System.Windows.Forms.TextBox();
+            this.intRate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,29 +41,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lnAmount
+            // loanAmount
             // 
-            this.lnAmount.Location = new System.Drawing.Point(148, 48);
-            this.lnAmount.Name = "lnAmount";
-            this.lnAmount.Size = new System.Drawing.Size(100, 20);
-            this.lnAmount.TabIndex = 0;
-            this.lnAmount.TextChanged += new System.EventHandler(this.LnAmount_TextChanged);
+            this.loanAmount.Location = new System.Drawing.Point(148, 48);
+            this.loanAmount.Name = "loanAmount";
+            this.loanAmount.Size = new System.Drawing.Size(100, 20);
+            this.loanAmount.TabIndex = 0;
+            this.loanAmount.TextChanged += new System.EventHandler(this.LnAmount_TextChanged);
             // 
-            // trmYears
+            // loanYears
             // 
-            this.trmYears.Location = new System.Drawing.Point(148, 106);
-            this.trmYears.Name = "trmYears";
-            this.trmYears.Size = new System.Drawing.Size(100, 20);
-            this.trmYears.TabIndex = 1;
-            this.trmYears.TextChanged += new System.EventHandler(this.TrmYears_TextChanged);
+            this.loanYears.Location = new System.Drawing.Point(148, 106);
+            this.loanYears.Name = "loanYears";
+            this.loanYears.Size = new System.Drawing.Size(100, 20);
+            this.loanYears.TabIndex = 1;
+            this.loanYears.TextChanged += new System.EventHandler(this.TrmYears_TextChanged);
             // 
-            // iRate
+            // intRate
             // 
-            this.iRate.Location = new System.Drawing.Point(148, 162);
-            this.iRate.Name = "iRate";
-            this.iRate.Size = new System.Drawing.Size(100, 20);
-            this.iRate.TabIndex = 2;
-            this.iRate.TextChanged += new System.EventHandler(this.IRate_TextChanged);
+            this.intRate.Location = new System.Drawing.Point(148, 162);
+            this.intRate.Name = "intRate";
+            this.intRate.Size = new System.Drawing.Size(100, 20);
+            this.intRate.TabIndex = 2;
+            this.intRate.TextChanged += new System.EventHandler(this.IRate_TextChanged);
             // 
             // label1
             // 
@@ -153,9 +153,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.iRate);
-            this.Controls.Add(this.trmYears);
-            this.Controls.Add(this.lnAmount);
+            this.Controls.Add(this.intRate);
+            this.Controls.Add(this.loanYears);
+            this.Controls.Add(this.loanAmount);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -166,9 +166,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox lnAmount;
-        private System.Windows.Forms.TextBox trmYears;
-        private System.Windows.Forms.TextBox iRate;
+        private System.Windows.Forms.TextBox loanAmount;
+        private System.Windows.Forms.TextBox loanYears;
+        private System.Windows.Forms.TextBox intRate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

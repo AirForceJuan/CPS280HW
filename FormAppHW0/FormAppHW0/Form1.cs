@@ -32,26 +32,25 @@ namespace FormAppHW0
         private void LnAmount_TextChanged(object sender, EventArgs e)
         {
             int val;
-            if ((!Int32.TryParse(lnAmount.Text, out val)))
+            if ((!Int32.TryParse(loanAmount.Text, out val)))
             {
                 label4.Visible = true;
             }
-            if ((Int32.TryParse(lnAmount.Text, out val)))
+            if ((Int32.TryParse(loanAmount.Text, out val)))
             {
                 label4.Visible = false;
             }
-            return ;
            
         }
 
         private void TrmYears_TextChanged(object sender, EventArgs e)
         {
             int val;
-            if ((!Int32.TryParse(trmYears.Text, out val)))
+            if ((!Int32.TryParse(loanYears.Text, out val)))
             {
                 label5.Visible = true;
             }
-            if ((Int32.TryParse(trmYears.Text, out val)))
+            if ((Int32.TryParse(loanYears.Text, out val)))
             {
                 label5.Visible = false;
             }
@@ -65,17 +64,17 @@ namespace FormAppHW0
         private void IRate_TextChanged(object sender, EventArgs e)
         {
             double val;
-            if ((!double.TryParse(iRate.Text, out val)))
+            if ((!double.TryParse(intRate.Text, out val)))
             {
                 label6.Visible = true;
             }
-            if ((double.TryParse(iRate.Text, out val)))
+            if ((double.TryParse(intRate.Text, out val)))
             {
                 label6.Visible = false;
             }
 
             string num = val.ToString();
-            if (num.Length >= 5)
+            if (num.Length >= 7)
             {
                 label6.Visible = true;
             }
@@ -85,14 +84,17 @@ namespace FormAppHW0
         {
             if(label4.Visible == false && label5.Visible == false && label6.Visible == false)
             {
-                double Prin = Convert.ToDouble(lnAmount.Text);
-                double Intrate = Convert.ToDouble(iRate.Text);
-                int numYears = Convert.ToInt32(trmYears.Text);
-                for (int i =1; i <= numYears; i++)
-                {
-                    double balance = Prin * Math.Pow(1 + Intrate, i);
-                    Solution.AppendText("year " + i.ToString() + "\t" + balance.ToString("C"));
-                }
+                double lAmount = Convert.ToDouble(loanAmount.Text);
+                double iRate = Convert.ToDouble(intRate.Text)/100;
+                double ltYears = Convert.ToDouble(loanYears.Text)*12;
+
+               
+                double totalMonth = (lAmount) * (Math.Pow((1 +iRate/12),ltYears) * iRate)/(12 * (Math.Pow((1 + iRate/12), ltYears) - 1));
+
+            
+                Solution.Text = totalMonth.ToString();
+                
+                
             }
 
         }
