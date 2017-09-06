@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FormAppHW0
 {
-    class Class1
+    class Calculator
     {
+        
     }
 }
