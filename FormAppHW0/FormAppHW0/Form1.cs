@@ -82,17 +82,33 @@ namespace FormAppHW0
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if(label4.Visible == false && label5.Visible == false && label6.Visible == false)
+            if (label4.Visible == false && label5.Visible == false && label6.Visible == false)
             {
                 double lAmount = Convert.ToDouble(loanAmount.Text);
-                double iRate = Convert.ToDouble(intRate.Text)/100;
-                double ltYears = Convert.ToDouble(loanYears.Text)*12;
+                double iRate = Convert.ToDouble(intRate.Text) / 100;
+                double loanMonths = Convert.ToDouble(loanYears.Text) * 12;
+                double payMonth = (lAmount) * (Math.Pow((1 + iRate / 12), loanMonths) * iRate) / (12 * (Math.Pow((1 + iRate / 12), loanMonths) - 1));
 
+                double monthPaid = Math.Round(payMonth, 1);
+
+
+
+                for (int t =1;t<=loanMonths;t++)
+                {
+                    
+                    double intpaid = Math.Round(lAmount * (iRate / 12), 3);
+                    double balance = Math.Round((lAmount - monthPaid),3);
+                    double princpaid = Math.Round(monthPaid - intpaid, 3);
+
+                    Solution.AppendText(string.Format("Month: {0}", t));
+                    Solution.AppendText(string.Format("Balance: {0}", balance));
+                    Solution.AppendText(string.Format("Interest Paid: {0}", intpaid));
+                    Solution.AppendText(string.Format("Principal: {0}\t\n", princpaid));
+                    
+
+                    lAmount = balance;
+                }
                
-                double totalMonth = (lAmount) * (Math.Pow((1 +iRate/12),ltYears) * iRate)/(12 * (Math.Pow((1 + iRate/12), ltYears) - 1));
-
-            
-                Solution.Text = totalMonth.ToString();
                 
                 
             }
